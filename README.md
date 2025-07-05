@@ -1,3 +1,3 @@
 # MANDELBROT
 
-![Screenshot](https://github.com/Luca00casati/mandelbrot/mandelbrot.png)
+![Screenshot](https://github.com/Luca00casati/mandelbrot/blob/master/mandelbrot.png)
