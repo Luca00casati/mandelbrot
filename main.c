@@ -1,5 +1,6 @@
 #include "raylib.h"
 
+const char* outputfile = "mandelbrot.png";
 const int screenWidth = 800;
 const int screenHeight = 450;
 const float zoomSpeed = 1.01f;
@@ -55,7 +56,7 @@ int main(void) {
       SetShaderValue(shader, offsetLoc, offset, SHADER_UNIFORM_VEC2);
     }
 
-    if (IsKeyPressed(KEY_F1))
+    if (IsKeyPressed(KEY_C))
       showControls = !showControls;
 
     // Render Mandelbrot set to texture
@@ -78,6 +79,9 @@ int main(void) {
       DrawText("Press F1 to toggle help", 10, 60, 10, RAYWHITE);
     }
     EndDrawing();
+    if (IsKeyPressed(KEY_S)){
+    TakeScreenshot(outputfile);
+    }
   }
 
   UnloadShader(shader);

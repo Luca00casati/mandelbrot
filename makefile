@@ -1,6 +1,7 @@
 # Compiler and flags
 CC = gcc
-CFLAGS = -I./raylib-5.5_linux_amd64/include
+IFLAGS = -I./raylib-5.5_linux_amd64/include
+CFLAGS = -Wall -Wextra -O2
 LDFLAGS = ./raylib-5.5_linux_amd64/lib/libraylib.a -lm -ldl -lpthread -lGL -lrt -lX11
 
 # Output binary name
@@ -14,7 +15,7 @@ SRC = main.c
 all: clean $(TARGET)
 
 $(TARGET): $(SRC)
-	$(CC) $(CFLAGS) $(SRC) -o $(TARGET) $(LDFLAGS)
+	$(CC) $(IFLAGS) $(CFLAGS) $(SRC) -o $(TARGET) $(LDFLAGS)
 
 run: $(TARGET)
 	./$(TARGET)
